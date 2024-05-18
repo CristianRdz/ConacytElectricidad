@@ -12,11 +12,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/energia/{lat}/{lon}")
+@app.get("/energia/{lat}/{lon}")
 async def get_energia(lat: float, lon: float):
     return await getEnergyByCords(lat, lon)
 
-@app.post("/red/{lat}/{lon}")
+@app.get("/red/{lat}/{lon}")
 async def get_red(lat: float, lon: float):
     return await capacidadRed(lat, lon)
 
